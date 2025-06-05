@@ -19,6 +19,7 @@ function Reset() {
     }
     console.log(resetPassword)
 
+    const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
     // function to submit inputs in backend
     async function handleSubmit(e) {
@@ -38,7 +39,7 @@ function Reset() {
         try {
             let response = await axios({
                 method: "post",
-                url: 'http://localhost:3000/reset',
+                url: `${BASE_URL}/reset`,
                 data: resetPassword
             })
             console.log(response.data)

@@ -9,13 +9,15 @@ function Manager() {
     const [password, setPassword] = useState('')
     const [savedPassword, setSavedPassword] = useState([])
 
+ const BASE_URL = import.meta.env.VITE_BACKEND_URL;
+
     useEffect(() => {
         async function getSavedData() {
             try {
                 let token = localStorage.getItem("token")
                 let response = await axios({
                     method: "get",
-                    url: 'http://localhost:3000/api/password',
+                    url: `${BASE_URL}/api/password`,
                     headers: {
                         Authorization: token,
                     },
@@ -46,7 +48,7 @@ function Manager() {
             let token = localStorage.getItem("token")
             let response = await axios({
                 method: "post",
-                url: 'http://localhost:3000/api/password',
+                url: `${BASE_URL}/api/password`,
                 headers: {
                     Authorization: token,
                 },
@@ -107,7 +109,7 @@ function Manager() {
             let token = localStorage.getItem("token")
             await axios({
                 method: 'delete',
-                url: `http://localhost:3000/api/password/${passwordToDelete._id}`,
+                url: `${BASE_URL}/api/password/${passwordToDelete._id}`,
                 headers: {
                     Authorization: token,
                 },

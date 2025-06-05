@@ -21,6 +21,7 @@ function SignUp() {
     setSignUpInfo((prev) => ({ ...prev, [name]: value }))
   }
 
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   // function to handel submit input fields data in database
   async function handelSubmit(e) {
@@ -29,7 +30,7 @@ function SignUp() {
     try {
       let response = await axios({
         method: "post",
-        url: 'http://localhost:3000/auth/signUp',
+        url: `${BASE_URL}/auth/signUp`,
         data: signUpInfo
       })
       // console.log(response.data)

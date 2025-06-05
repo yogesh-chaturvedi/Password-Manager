@@ -20,6 +20,7 @@ function Login() {
   }
   // console.log(loginInfo)
 
+  const BASE_URL = import.meta.env.VITE_BACKEND_URL;
 
   // function to handel submit 
   async function handleSubmit(e) {
@@ -27,7 +28,7 @@ function Login() {
     try {
       let response = await axios({
         method: "post",
-        url: 'http://localhost:3000/auth/login',
+        url: `${BASE_URL}/auth/login`,
         data: loginInfo
       })
       console.log(response.data)
