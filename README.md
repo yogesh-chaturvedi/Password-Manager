@@ -113,4 +113,4 @@ npm run dev
 
 ## 🔗 Live Demo
 
-Coming soon...
+https://password-manager-ten-xi.vercel.app/
