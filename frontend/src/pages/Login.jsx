@@ -99,7 +99,7 @@ function Login() {
       <div className="container border border-gray-700 flex flex-col items-center justify-center w-[80vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl min-h-[30vh] rounded-3xl bg-gray-900 shadow-lg">
         <h1 className='heading underline mb-4 pt-2 font-bold text-3xl text-center text-gray-100'>Login</h1>
 
-        <form onSubmit={() => handleSubmit()} className='flex w-[80%] flex-col gap-5'>
+        <form onSubmit={handleSubmit} className='flex w-[80%] flex-col gap-5'>
 
           {/* email */}
           <div className='email w-full flex flex-col'>
