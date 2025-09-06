@@ -77,52 +77,84 @@ function SignUp() {
 
 
   return (
-    <div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300'>
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-      <div className="container border-2 flex flex-col items-center justify-center w-[80vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl min-h-[30vh] rounded-3xl bg-white shadow-md">
-        <h1 className='heading underline mb-4 pt-2 font-bold text-3xl text-center'>SignUp</h1>
+  <div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950'>
+  <ToastContainer
+    position="top-center"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick={false}
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+  />
 
-        <form className='flex w-[80%] flex-col gap-5' onSubmit={handelSubmit} >
+  <div className="container border border-gray-700 flex flex-col items-center justify-center w-[80vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl min-h-[30vh] rounded-3xl bg-gray-900 shadow-lg">
+    <h1 className='heading underline mb-4 pt-2 font-bold text-3xl text-center text-gray-100'>SignUp</h1>
 
-          {/* name */}
-          <div className='w-full flex flex-col'>
-            <label className='font-bold text-2xl ml-2' htmlFor="name">Name</label>
-            <input value={signUpInfo.name} onChange={handelChange} className='border-2 outline-none px-2 rounded-3xl' type="text" name="name" autoFocus placeholder='Enter your name here' />
-          </div>
+    <form className='flex w-[80%] flex-col gap-5' onSubmit={handelSubmit}>
 
-          {/* email */}
-          <div className='w-full flex flex-col'>
-            <label className='font-bold text-2xl ml-2' htmlFor="Email">Email</label>
-            <input value={signUpInfo.email} onChange={handelChange} className='border-2 outline-none px-2 rounded-3xl' type="text" name="email" placeholder='Enter your email here' />
-          </div>
-
-          {/* password */}
-          <div className='w-full flex flex-col'>
-            <label className='font-bold text-2xl ml-2' htmlFor="password">Password</label>
-            <input value={signUpInfo.password} onChange={handelChange} className='border-2 outline-none px-2 rounded-3xl' type="password" name="password" placeholder='Enter your password here' />
-          </div>
-
-
-          {/* submit button */}
-          <div className='text-center'>
-            <button type='submit' className='border-2 px-4  text-lg font-bold rounded-3xl text-white bg-blue-700 cursor-pointer'>SignUp</button>
-            <div className='font-semibold py-2'>If Already have an account, Then :<span className='underline text-blue-700'><Link to='/login'>Login</Link></span></div>
-          </div>
-        </form>
-
+      {/* name */}
+      <div className='w-full flex flex-col'>
+        <label className='font-bold text-2xl ml-2 text-gray-200' htmlFor="name">Name</label>
+        <input
+          value={signUpInfo.name}
+          onChange={handelChange}
+          className='border border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-400 outline-none px-2 rounded-3xl focus:ring-2 focus:ring-blue-600'
+          type="text"
+          name="name"
+          autoFocus
+          placeholder='Enter your name here'
+        />
       </div>
-    </div>
+
+      {/* email */}
+      <div className='w-full flex flex-col'>
+        <label className='font-bold text-2xl ml-2 text-gray-200' htmlFor="Email">Email</label>
+        <input
+          value={signUpInfo.email}
+          onChange={handelChange}
+          className='border border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-400 outline-none px-2 rounded-3xl focus:ring-2 focus:ring-blue-600'
+          type="text"
+          name="email"
+          placeholder='Enter your email here'
+        />
+      </div>
+
+      {/* password */}
+      <div className='w-full flex flex-col'>
+        <label className='font-bold text-2xl ml-2 text-gray-200' htmlFor="password">Password</label>
+        <input
+          value={signUpInfo.password}
+          onChange={handelChange}
+          className='border border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-400 outline-none px-2 rounded-3xl focus:ring-2 focus:ring-blue-600'
+          type="password"
+          name="password"
+          placeholder='Enter your password here'
+        />
+      </div>
+
+      {/* submit button */}
+      <div className='text-center'>
+        <button
+          type='submit'
+          className='px-4 py-2 text-lg font-bold rounded-3xl text-white bg-blue-600 hover:bg-blue-700 cursor-pointer'
+        >
+          SignUp
+        </button>
+        <div className='font-semibold py-2 text-gray-300'>
+          If Already have an account, Then :
+          <span className='underline text-emerald-500 hover:text-emerald-400 ml-1'>
+            <Link to='/login'>Login</Link>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
   )
 }
 

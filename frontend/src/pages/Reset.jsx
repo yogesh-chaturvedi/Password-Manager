@@ -84,7 +84,7 @@ function Reset() {
     }
 
     return (
-        <div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-300 via-purple-400 to-pink-300'>
+        <div className='flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950'>
             <ToastContainer
                 position="top-center"
                 autoClose={5000}
@@ -97,40 +97,72 @@ function Reset() {
                 pauseOnHover
                 theme="dark"
             />
-            <div className="container border-2 flex flex-col items-center justify-centerw-[80vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl min-h-[30vh] rounded-3xl bg-white shadow-md">
-                <h1 className='heading underline mb-4 pt-2 font-bold text-3xl text-center'>Reset Password</h1>
+
+            <div className="container border border-gray-700 flex flex-col items-center justify-center w-[80vw] max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl min-h-[30vh] rounded-3xl bg-gray-900 shadow-lg">
+                <h1 className='heading underline mb-4 pt-2 font-bold text-3xl text-center text-gray-100'>
+                    Reset Password
+                </h1>
 
                 <form onSubmit={handleSubmit} className='flex w-[80%] flex-col gap-5'>
 
                     {/* email */}
-                    <div className='email w-full flex flex-col'>
-                        <label className='font-bold text-2xl ml-2' htmlFor="Email">Email</label>
-                        <input value={resetPassword.value} onChange={handleChange} className='border-2 outline-none px-2 rounded-3xl' type="text" name="email" placeholder='Enter your email here' />
+                    <div className='w-full flex flex-col'>
+                        <label className='font-bold text-2xl ml-2 text-gray-200' htmlFor="Email">Email</label>
+                        <input
+                            value={resetPassword.value}
+                            onChange={handleChange}
+                            className='border border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-400 outline-none px-2 rounded-3xl focus:ring-2 focus:ring-blue-600'
+                            type="text"
+                            name="email"
+                            placeholder='Enter your email here'
+                        />
                     </div>
 
-                    {/* set new password */}
-                    <div className='nerPassword w-full flex flex-col'>
-                        <label className='font-bold text-2xl ml-2' htmlFor="NewPassword">New Password</label>
-                        <input value={resetPassword.newPassword} onChange={handleChange} className='border-2 px-2 rounded-3xl outline-none' type="password" name="newPassword" placeholder='Enter your password here' />
+                    {/* new password */}
+                    <div className='w-full flex flex-col'>
+                        <label className='font-bold text-2xl ml-2 text-gray-200' htmlFor="NewPassword">New Password</label>
+                        <input
+                            value={resetPassword.newPassword}
+                            onChange={handleChange}
+                            className='border border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-400 outline-none px-2 rounded-3xl focus:ring-2 focus:ring-blue-600'
+                            type="password"
+                            name="newPassword"
+                            placeholder='Enter your password here'
+                        />
                     </div>
 
-                    {/*confirm new password */}
-                    <div className='ConfirmNewPassword w-full flex flex-col'>
-                        <label className='font-bold text-2xl ml-2' htmlFor="ConfirmNewPassword">Confirm New Password</label>
-                        <input value={resetPassword.confirmPassword} onChange={handleChange} className='border-2 px-2 rounded-3xl outline-none' type="password" name="confirmPassword" placeholder='Enter your new password here' />
+                    {/* confirm new password */}
+                    <div className='w-full flex flex-col'>
+                        <label className='font-bold text-2xl ml-2 text-gray-200' htmlFor="ConfirmNewPassword">Confirm New Password</label>
+                        <input
+                            value={resetPassword.confirmPassword}
+                            onChange={handleChange}
+                            className='border border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-400 outline-none px-2 rounded-3xl focus:ring-2 focus:ring-blue-600'
+                            type="password"
+                            name="confirmPassword"
+                            placeholder='Enter your new password here'
+                        />
                     </div>
-
 
                     {/* submit button */}
                     <div className='text-center'>
-                        <button type='submit' className='border-2 px-4 text-lg font-bold rounded-3xl text-white bg-blue-700 cursor-pointer'>Save</button>
-                        <div className='font-semibold py-2'>Back To :<span className='underline text-blue-700'><Link to='/login'>LogIn</Link></span></div>
+                        <button
+                            type='submit'
+                            className='px-4 py-2 text-lg font-bold rounded-3xl text-white bg-blue-600 hover:bg-blue-700 cursor-pointer'
+                        >
+                            Save
+                        </button>
+                        <div className='font-semibold py-2 text-gray-300'>
+                            Back To :
+                            <span className='underline text-emerald-500 hover:text-emerald-400 ml-1'>
+                                <Link to='/login'>LogIn</Link>
+                            </span>
+                        </div>
                     </div>
                 </form>
-
             </div>
-
         </div>
+
     )
 }
 
